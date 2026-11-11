@@ -79,6 +79,9 @@ const donnees = {
         </nav>
       </div>
     </header>
+    <script is:inline>
+      (function(){var h=document.querySelector('header.band');if(!h)return;function f(){h.classList.toggle('defile',window.scrollY>8)}f();window.addEventListener('scroll',f,{passive:true})})();
+    </script>
 
     <main id="contenu">
       <slot />
