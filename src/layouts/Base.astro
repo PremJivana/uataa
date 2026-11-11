@@ -16,7 +16,7 @@ const estActif = (href: string) => actuel === lien(href).replace(/\/$/, '');
 // Le site reste caché des moteurs de recherche tant que l'adresse définitive n'est pas en place.
 const indexable = import.meta.env.PUBLIC_INDEXABLE === 'true';
 const canonique = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
-const partage = Astro.site ? new URL(lien('partage.jpg'), Astro.site).href : lien('partage.jpg');
+const partage = Astro.site ? new URL(lien('partage-cours.jpg'), Astro.site).href : lien('partage-cours.jpg');
 
 const donnees = {
   '@context': 'https://schema.org',
@@ -56,6 +56,9 @@ const donnees = {
     <meta property="og:title" content={titre} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={partage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Aurélie guide un cours de Kundalini Yoga au centre AMA, à Papeete" />
     <link rel="icon" type="image/png" href={lien('favicon.png')} />
     <link rel="apple-touch-icon" href={lien('apple-touch-icon.png')} />
     <link rel="manifest" href={lien('manifest.webmanifest')} />
