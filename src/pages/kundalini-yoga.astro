@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import { site } from '../data/site';
 import salle from '../assets/salle.jpg';
+import jardin from '../assets/jardin.jpg';
 ---
 
 <Base
@@ -53,7 +54,7 @@ import salle from '../assets/salle.jpg';
     </div>
   </section>
 
-  <section class="band">
+  <section class="deux band">
     <div class="in">
       <div class="prose">
         <p class="sur">Ouvert à tous</p>
@@ -75,6 +76,14 @@ import salle from '../assets/salle.jpg';
           Si vous avez une blessure ou un problème de santé, parlez-m'en avant le cours&nbsp;: nous adapterons la
           pratique ensemble.
         </p>
+      </div>
+      <div class="photo" style="border-radius:18px;align-self:center">
+        <Image
+          src={jardin}
+          alt="Relaxation de Kundalini Yoga en plein air à Tahiti, sous les arbres, guidée par Aurélie"
+          widths={[480, 800, 1200]}
+          sizes="(min-width: 700px) 470px, 100vw"
+        />
       </div>
     </div>
   </section>
