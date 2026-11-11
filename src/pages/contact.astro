@@ -5,13 +5,13 @@ import { site } from '../data/site';
 
 <Base
   titre="Contact et accès au cours de yoga, centre AMA à Papeete | Uataa"
-  description="Contactez Aurélie par WhatsApp pour toute question sur les cours de Kundalini Yoga. Centre AMA, 9 rue du Commandant Gilbert, Papeete."
+  description="Contactez Aurélie par téléphone ou WhatsApp au 87 28 28 05 pour toute question sur les cours de Kundalini Yoga. Centre AMA, 9 rue du Commandant Gilbert, Papeete."
 >
   <div class="entete band">
     <div class="in">
       <p class="sur">Contact</p>
       <h1>Contact&nbsp;: une question sur les cours&nbsp;?</h1>
-      <p class="lead">Le plus simple est WhatsApp. Je vous réponds dès que possible.</p>
+      <p class="lead">Par WhatsApp, par SMS ou par téléphone au {site.telephone}. Je vous réponds dès que possible.</p>
     </div>
   </div>
 
@@ -23,6 +23,10 @@ import { site } from '../data/site';
         <div>
           <dt>WhatsApp</dt>
           <dd><a class="btn" href={site.whatsapp} target="_blank" rel="noopener">M'écrire sur WhatsApp</a></dd>
+        </div>
+        <div>
+          <dt>Téléphone</dt>
+          <dd><a class="lien" href={site.tel}>{site.telephone}</a> (appel ou SMS)</dd>
         </div>
         <div>
           <dt>Adresse</dt>

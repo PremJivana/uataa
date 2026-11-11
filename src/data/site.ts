@@ -18,6 +18,8 @@ export const site = {
     { nom: 'Trimestre', prix: '16 700 XPF', xpf: 16700 },
   ],
   whatsapp: 'https://wa.me/68987282805',
+  telephone: '87 28 28 05',
+  tel: 'tel:+68987282805',
   reserver:
     'https://wa.me/68987282805?text=' +
     encodeURIComponent('Bonjour Aurélie, je souhaite réserver ma séance offerte de Kundalini Yoga un lundi à 17h30.'),
