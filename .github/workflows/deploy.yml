@@ -30,8 +30,8 @@ jobs:
         env:
           SITE_URL: https://uataa.net
           BASE_PATH: ''
-          # Passer à 'true' pour ouvrir le site aux moteurs de recherche.
-          PUBLIC_INDEXABLE: ${{ vars.PUBLIC_INDEXABLE || 'false' }}
+          # Site ouvert aux moteurs de recherche (variable PUBLIC_INDEXABLE à 'false' pour le cacher).
+          PUBLIC_INDEXABLE: ${{ vars.PUBLIC_INDEXABLE || 'true' }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
