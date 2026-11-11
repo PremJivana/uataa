@@ -26,6 +26,7 @@ export const site = {
   facebook: 'https://www.facebook.com/profile.php?id=61587230950559',
   ecole: 'https://www.ecoledutantra.fr/',
   association: 'https://www.diwali-yoga.fr/',
+  inscription: 'https://yoga.reactifpro.fr/inscription/tahiti',
 };
 
 export const menu = [
