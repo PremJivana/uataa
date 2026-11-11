@@ -58,6 +58,11 @@ const donnees = {
     <meta property="og:image" content={partage} />
     <link rel="icon" type="image/png" href={lien('favicon.png')} />
     <link rel="apple-touch-icon" href={lien('apple-touch-icon.png')} />
+    <link rel="manifest" href={lien('manifest.webmanifest')} />
+    <meta name="theme-color" content="#f4f2ee" />
+    <meta name="apple-mobile-web-app-title" content="Uataa" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -80,6 +85,9 @@ const donnees = {
         </nav>
       </div>
     </header>
+    <script is:inline>
+      if ('serviceWorker' in navigator) window.addEventListener('load', function(){ navigator.serviceWorker.register('/sw.js').catch(function(){}); });
+    </script>
     <script is:inline>
       (function(){var h=document.querySelector('header.band');if(!h)return;function f(){h.classList.toggle('defile',window.scrollY>8)}f();window.addEventListener('scroll',f,{passive:true})})();
     </script>

@@ -1,0 +1,16 @@
+{
+  "name": "Uataa · Kundalini Yoga à Papeete",
+  "short_name": "Uataa",
+  "description": "Cours de Kundalini Yoga avec Aurélie, tous les lundis au centre AMA, Papeete.",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f2ee",
+  "theme_color": "#f4f2ee",
+  "icons": [
+    { "src": "/icone-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icone-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icone-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
