@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import { site } from '../data/site';
+import { site, lien } from '../data/site';
 import salle from '../assets/salle.jpg';
 import jardin from '../assets/jardin.jpg';
 ---
@@ -134,10 +134,10 @@ import jardin from '../assets/jardin.jpg';
         </div>
         <div>
           <h3>Comment essayer&nbsp;?</h3>
-          <p>La première séance est offerte. Il suffit de réserver sa place par WhatsApp ou par téléphone au {site.telephone}.</p>
+          <p>La première séance est offerte. Il suffit de réserver sa place en ligne, ou par WhatsApp ou téléphone au {site.telephone}.</p>
         </div>
       </div>
-      <div><a class="btn" href={site.reserver} target="_blank" rel="noopener">Réserver ma séance offerte</a></div>
+      <div><a class="btn" href={lien('planning-tarifs/') + '#reservation'}>Réserver ma séance offerte</a></div>
     </div>
   </section>
 </Base>

@@ -28,14 +28,37 @@ import { site } from '../data/site';
       </div>
       <div class="bloc">
         <h2>Réserver un cours</h2>
-        <p>Pour retenir votre place, envoyez-moi un message WhatsApp, un SMS ou appelez-moi au <a class="lien" href={site.tel}>{site.telephone}</a>, en indiquant le lundi qui vous convient.</p>
+        <p>Choisissez votre lundi dans le calendrier&nbsp;: votre place est retenue tout de suite.</p>
         <ol class="etapes">
-          <li>Vous m'écrivez sur WhatsApp ou par SMS, ou vous m'appelez.</li>
-          <li>Je vous confirme votre place.</li>
+          <li>Vous choisissez une date et indiquez votre nom et votre email.</li>
+          <li>Vous recevez une confirmation, puis un rappel par email.</li>
           <li>Vous venez avec une tenue confortable, le reste est sur place.</li>
         </ol>
-        <div><a class="btn" href={site.reserver} target="_blank" rel="noopener">Réserver ma séance offerte</a></div>
+        <p>
+          Une question, ou pas d'email&nbsp;? Écrivez-moi sur{' '}
+          <a class="lien" href={site.reserverWhatsapp} target="_blank" rel="noopener">WhatsApp</a>, par SMS ou appelez-moi au{' '}
+          <a class="lien" href={site.tel}>{site.telephone}</a>.
+        </p>
+        <div><a class="btn" href="#reservation">Choisir ma date</a></div>
       </div>
     </div>
   </section>
+
+  <section class="band" id="reservation">
+    <div class="in">
+      <div><p class="sur">Réservation en ligne</p><h2>Choisir mon lundi</h2></div>
+      <div id="cal-inline" class="cal-cadre"></div>
+      <p class="cal-secours">
+        Le calendrier ne s'affiche pas&nbsp;?{' '}
+        <a class="lien" href={site.reserverCal} target="_blank" rel="noopener">Ouvrir la page de réservation</a>.
+      </p>
+    </div>
+  </section>
+
+  <script is:inline define:vars={{ calLink: site.cal }}>
+    (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === 'string') { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ['initNamespace', namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, 'https://app.cal.com/embed/embed.js', 'init');
+    Cal('init', 'cours', { origin: 'https://cal.com' });
+    Cal.ns.cours('inline', { elementOrSelector: '#cal-inline', calLink: calLink, config: { layout: 'month_view' } });
+    Cal.ns.cours('ui', { hideEventTypeDetails: false, layout: 'month_view', cssVarsPerTheme: { light: { 'cal-brand': '#2a4a6a' } } });
+  </script>
 </Base>

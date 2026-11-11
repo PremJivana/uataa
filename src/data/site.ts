@@ -20,7 +20,10 @@ export const site = {
   whatsapp: 'https://wa.me/68987282805',
   telephone: '87 28 28 05',
   tel: 'tel:+68987282805',
-  reserver:
+  // Réservation en ligne (Cal.com) ; WhatsApp reste en secours
+  cal: 'uataa/cours-de-kundalini-yoga-tahiti',
+  reserverCal: 'https://cal.com/uataa/cours-de-kundalini-yoga-tahiti',
+  reserverWhatsapp:
     'https://wa.me/68987282805?text=' +
     encodeURIComponent('Bonjour Aurélie, je souhaite réserver ma séance offerte de Kundalini Yoga un lundi à 17h30.'),
   facebook: 'https://www.facebook.com/profile.php?id=61587230950559',

@@ -120,3 +120,6 @@ img{max-width:100%;height:auto}
 .etapes{margin:0;padding-left:1.2em;display:grid;gap:8px;color:var(--texte-doux)}
 footer a{color:inherit}
 .lien{color:var(--bleu);font-weight:700}
+
+.cal-cadre{width:100%;min-height:560px;overflow:auto;border-radius:18px;background:var(--papier)}
+.cal-secours{font-size:.9rem;color:var(--texte-doux)}
