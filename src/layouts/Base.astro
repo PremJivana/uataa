@@ -1,0 +1,95 @@
+---
+import '../styles/global.css';
+import { Image } from 'astro:assets';
+import spirale from '../assets/spirale.png';
+import { site, menu, lien } from '../data/site';
+
+interface Props {
+  titre: string;
+  description: string;
+}
+const { titre, description } = Astro.props;
+
+const actuel = Astro.url.pathname.replace(/\/$/, '');
+const estActif = (href: string) => actuel === lien(href).replace(/\/$/, '');
+
+// Le site reste caché des moteurs de recherche tant que l'adresse définitive n'est pas en place.
+const indexable = import.meta.env.PUBLIC_INDEXABLE === 'true';
+const canonique = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const partage = Astro.site ? new URL(lien('partage.jpg'), Astro.site).href : lien('partage.jpg');
+
+const donnees = {
+  '@context': 'https://schema.org',
+  '@type': 'SportsActivityLocation',
+  name: `${site.nom} - ${site.baseline}`,
+  description: 'Cours de Kundalini Yoga à Papeete, au centre AMA.',
+  url: Astro.site?.href,
+  image: partage,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.lieu.rue,
+    addressLocality: site.lieu.ville,
+    addressCountry: site.lieu.pays,
+  },
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Monday', opens: site.cours.debut, closes: site.cours.fin },
+  ],
+  sameAs: [site.facebook],
+};
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titre}</title>
+    <meta name="description" content={description} />
+    {!indexable && <meta name="robots" content="noindex" />}
+    {canonique && <link rel="canonical" href={canonique} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content={`${site.nom} - ${site.baseline}`} />
+    <meta property="og:title" content={titre} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={partage} />
+    <link rel="icon" type="image/png" href={lien('favicon.png')} />
+    <link rel="apple-touch-icon" href={lien('apple-touch-icon.png')} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;500;700&display=swap"
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(donnees)} />
+  </head>
+  <body>
+    <a class="saut" href="#contenu">Aller au contenu</a>
+    <header class="band">
+      <div class="in">
+        <a class="marque" href={lien()}>
+          <Image src={spirale} alt="" width={38} height={38} loading="eager" />UATAA
+        </a>
+        <nav aria-label="Menu principal">
+          {menu.map((m) => (
+            <a href={lien(m.href)} aria-current={estActif(m.href) ? 'page' : undefined}>{m.label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenu">
+      <slot />
+    </main>
+
+    <footer class="band">
+      <div class="in">
+        <span>{site.nom}, {site.baseline} · {site.lieu.nom}, {site.lieu.ville}</span>
+        <span>
+          <a href={site.whatsapp} target="_blank" rel="noopener">WhatsApp</a>{' · '}
+          <a href={site.facebook} target="_blank" rel="noopener">Facebook</a>
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>

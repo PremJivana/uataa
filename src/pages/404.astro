@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import { lien } from '../data/site';
+---
+
+<Base titre="Page introuvable | Uataa" description="Cette page n'existe pas ou a été déplacée.">
+  <div class="entete band">
+    <div class="in">
+      <p class="sur">Page introuvable</p>
+      <h1>Cette page n'existe pas</h1>
+      <p class="lead">Elle a peut-être été déplacée.</p>
+      <div style="padding-block:16px 96px"><a class="btn" href={lien()}>Revenir à l'accueil</a></div>
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,9 @@
+---
+import { site } from '../data/site';
+---
+
+<ul class="tarifs">
+  {site.tarifs.map((t) => (
+    <li><span>{t.nom}</span><b>{t.prix}</b></li>
+  ))}
+</ul>

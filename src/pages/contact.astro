@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+
+<Base
+  titre="Contact et accès : centre AMA, Papeete | Uataa"
+  description="Contactez Aurélie par WhatsApp pour toute question sur les cours de Kundalini Yoga. Centre AMA, 9 rue du Commandant Gilbert, Papeete."
+>
+  <div class="entete band">
+    <div class="in">
+      <p class="sur">Contact</p>
+      <h1>Une question&nbsp;? Écrivez-moi</h1>
+      <p class="lead">Le plus simple est WhatsApp. Je vous réponds dès que possible.</p>
+    </div>
+  </div>
+
+  <section class="deux band">
+    <div class="in">
+      <dl class="lieu-dl">
+        <div>
+          <dt>WhatsApp</dt>
+          <dd><a class="btn" href={site.whatsapp} target="_blank" rel="noopener">M'écrire sur WhatsApp</a></dd>
+        </div>
+        <div>
+          <dt>Adresse</dt>
+          <dd>
+            {site.lieu.nom}<br />{site.lieu.rue}, {site.lieu.ville}<br />
+            <a class="lien" href={site.lieu.plan} target="_blank" rel="noopener">Ouvrir dans Google Maps</a>
+          </dd>
+        </div>
+        <div><dt>Cours</dt><dd>{site.cours.libelle}</dd></div>
+        <div>
+          <dt>Facebook</dt>
+          <dd><a class="lien" href={site.facebook} target="_blank" rel="noopener">Page Facebook de Uataa</a></dd>
+        </div>
+      </dl>
+      <iframe
+        class="plan"
+        title="Plan d'accès au centre AMA, 9 rue du Commandant Gilbert, Papeete"
+        src={site.lieu.carte}
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+</Base>

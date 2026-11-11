@@ -1,0 +1,146 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Tarifs from '../components/Tarifs.astro';
+import { site, lien } from '../data/site';
+import logo from '../assets/logo.png';
+import jardin from '../assets/jardin.jpg';
+import cours from '../assets/cours.jpg';
+import meditation from '../assets/meditation.jpg';
+import salle from '../assets/salle.jpg';
+---
+
+<Base
+  titre="Kundalini Yoga à Papeete | Uataa - Yoga & Arts du Soin"
+  description="Cours de Kundalini Yoga à Papeete, tous les lundis de 17h30 à 18h45 au centre AMA. Première séance offerte, tapis et coussins fournis."
+>
+  <div class="hero band">
+    <div class="in">
+      <Image src={logo} alt="Uataa, Yoga et Arts du Soin" width={400} height={400} loading="eager" />
+      <h1>Kundalini Yoga à Papeete</h1>
+      <p class="lead">Un cours hebdomadaire pour respirer, se recentrer et retrouver son énergie, au centre AMA.</p>
+      <div class="actions">
+        <a class="btn" href={site.reserver} target="_blank" rel="noopener">Réserver ma séance offerte</a>
+        <a class="btn clair" href={lien('planning-tarifs/')}>Voir l'horaire et les tarifs</a>
+      </div>
+      <div class="ouverture">
+        <Image
+          src={jardin}
+          alt="Relaxation en plein air, sous les arbres, guidée par Aurélie"
+          widths={[480, 800, 1200, 1520]}
+          sizes="(min-width: 800px) 760px, 100vw"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </div>
+
+  <section class="yoga band">
+    <div class="in">
+      <div class="photo" style="border-radius:18px">
+        <Image
+          src={cours}
+          alt="Aurélie guide un cours de Kundalini Yoga, mains jointes face à ses élèves"
+          widths={[480, 800, 1200]}
+          sizes="(min-width: 700px) 470px, 100vw"
+        />
+      </div>
+      <div class="texte">
+        <p class="sur">La pratique</p>
+        <h2>Le Kundalini Yoga</h2>
+        <p>
+          Postures, respirations, mantras et méditation, réunis dans des séries appelées kriyas. Une pratique accessible
+          à tous, quel que soit le niveau.
+        </p>
+        <ul class="temps">
+          <li><b>Se poser</b><span>Un échauffement en douceur pour revenir à soi, puis le mantra d'ouverture.</span></li>
+          <li><b>Pratiquer</b><span>Le kriya de la semaine, à son rythme.</span></li>
+          <li><b>Intégrer</b><span>Une relaxation, puis une méditation.</span></li>
+        </ul>
+        <div><a class="btn clair" href={lien('kundalini-yoga/')}>Découvrir la pratique</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prochain band">
+    <div class="in">
+      <div style="display:grid;gap:10px">
+        <p class="sur">Prochain cours</p>
+        <h2>Kundalini Yoga, chaque lundi</h2>
+        <p>De 17h30 à 18h45, au centre AMA, Papeete.</p>
+      </div>
+      <div class="droite">
+        <Tarifs />
+        <p class="reglement">Le règlement se fait auprès de l'association Diwali Yoga.</p>
+        <a class="btn" href={site.reserver} target="_blank" rel="noopener">Réserver ma séance offerte</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="apropos band">
+    <div class="in">
+      <div class="photo portrait">
+        <Image
+          src={meditation}
+          alt="Aurélie en méditation, assise en tailleur, les yeux fermés"
+          widths={[480, 800, 1008]}
+          sizes="(min-width: 700px) 470px, 100vw"
+        />
+      </div>
+      <div class="texte">
+        <p class="sur">À propos</p>
+        <h2>Aurélie, votre enseignante</h2>
+        <p>
+          Je pratique le Kundalini Yoga depuis 2022, et l'envie de transmettre est venue très vite. Je me forme à
+          l'enseignement auprès de <a class="lien" href={site.ecole} target="_blank" rel="noopener">l'École du Tantra</a>,
+          en France, et j'enseigne à Tahiti depuis 2024 au sein de l'association{' '}
+          <a class="lien" href={site.association} target="_blank" rel="noopener">Diwali Yoga Tahiti</a>.
+        </p>
+        <p>
+          Comme beaucoup, j'ai un quotidien bien rempli. La pratique m'apporte plus d'énergie, une meilleure
+          concentration et davantage de calme pour le traverser.
+        </p>
+        <p>
+          C'est ce que je souhaite offrir à mes élèves&nbsp;: un petit cocon, le temps d'un cours, pour repartir plus
+          apaisé et moins stressé.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="lieu band">
+    <div class="in">
+      <div style="display:grid;gap:10px">
+        <p class="sur">Le lieu</p>
+        <h2>Au centre AMA, à Papeete</h2>
+        <div class="photo" style="border-radius:18px">
+          <Image
+            src={salle}
+            alt="Élèves en posture dans la salle de pratique"
+            widths={[480, 800, 1200]}
+            sizes="(min-width: 700px) 470px, 100vw"
+          />
+        </div>
+      </div>
+      <dl>
+        <div>
+          <dt>Adresse</dt>
+          <dd>
+            {site.lieu.nom}<br />{site.lieu.rue}, {site.lieu.ville}<br />
+            <a class="lien" href={site.lieu.plan} target="_blank" rel="noopener">Voir sur Google Maps</a>
+          </dd>
+        </div>
+        <div><dt>Cours</dt><dd>{site.cours.libelle}</dd></div>
+        <div><dt>Sur place</dt><dd>Salle climatisée, tapis et coussins fournis</dd></div>
+        <div>
+          <dt>Contact</dt>
+          <dd>
+            <a class="lien" href={site.whatsapp} target="_blank" rel="noopener">M'écrire sur WhatsApp</a><br />
+            <a class="lien" href={site.facebook} target="_blank" rel="noopener">Page Facebook</a>
+          </dd>
+        </div>
+        <div><a class="btn" href={site.reserver} target="_blank" rel="noopener">Réserver ma séance offerte</a></div>
+      </dl>
+    </div>
+  </section>
+</Base>

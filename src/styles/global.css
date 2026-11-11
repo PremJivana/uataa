@@ -1,0 +1,106 @@
+/* Layout : une colonne aérée, pensée téléphone d'abord ; la spirale du logo ouvre la page, le jaune ne sert qu'aux actions */
+:root{
+  color-scheme:light;
+  --fond:#f4f2ee; --papier:#fbfaf7; --marine:#2a4a6a; --bleu:#3e92cc; --bleu-doux:#dcebf5;
+  --soleil:#ffb90b; --soleil-clair:#ffdd12; --texte:#2a4a6a; --texte-doux:#5d7388; --trait:#d9dfe3;
+  --titre:"Cormorant Garamond",Georgia,serif; --corps:"Mulish",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{background:var(--fond);color:var(--texte);font-family:var(--corps);font-size:16px;line-height:1.6}
+.band{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.in{max-width:960px;margin:0 auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--titre);font-weight:500;line-height:1.12;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.2rem,7vw,3.4rem)}
+h2{font-size:clamp(1.8rem,5vw,2.4rem)}
+h3{font-size:1.5rem}
+p{margin:0}
+.sur{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bleu);font-weight:700}
+.btn{display:inline-block;background:var(--soleil);color:var(--marine);font-weight:700;text-decoration:none;padding:13px 26px;border-radius:999px;border:0;font-family:var(--corps);font-size:1rem}
+.btn:hover{background:var(--soleil-clair)}
+.btn.clair{background:transparent;box-shadow:inset 0 0 0 1.5px var(--marine)}
+.btn.clair:hover{background:var(--bleu-doux)}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--bleu);outline-offset:3px}
+
+header .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px;flex-wrap:wrap}
+.marque{font-family:var(--titre);font-size:1.6rem;letter-spacing:.14em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.marque img{width:38px;height:38px;border-radius:50%}
+nav{display:flex;gap:20px;flex-wrap:wrap;font-size:.92rem}
+nav a{text-decoration:none}
+nav a:hover{color:var(--bleu)}
+
+.hero .in{display:grid;gap:28px;justify-items:center;text-align:center;padding-block:28px 56px}
+.hero>.in>img{width:min(200px,50vw);height:auto}
+.hero p.lead{max-width:34em;color:var(--texte-doux);font-size:1.08rem}
+.actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.ouverture{width:min(760px,100%);aspect-ratio:4/3;border-radius:22px;overflow:hidden;margin-top:8px}
+.ouverture img{width:100%;height:100%;object-fit:cover;display:block}
+@media (min-width:700px){.ouverture{aspect-ratio:16/10}.ouverture img{object-position:50% 60%}}
+
+section .in{padding-block:52px;display:grid;gap:28px}
+.photo{aspect-ratio:4/3;max-width:100%;background:var(--bleu-doux);display:grid;place-items:center;color:var(--marine);font-size:.85rem;text-align:center;padding:16px}
+.photo.portrait{aspect-ratio:4/5;border-radius:18px}
+.photo{overflow:hidden}
+.photo:has(img){padding:0}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo.portrait img{object-position:38% 50%}
+
+.yoga .in{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:center}
+.yoga .texte{display:grid;gap:14px}
+.yoga .texte>p:not(.sur){color:var(--texte-doux)}
+.temps{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.temps li{display:grid;grid-template-columns:7em 1fr;gap:12px;padding-block:10px;border-top:1px solid var(--trait)}
+.temps span{color:var(--texte-doux)}
+.prochain{background:var(--marine);color:var(--fond)}
+.prochain .in{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));align-items:center}
+.prochain .sur{color:var(--soleil-clair)}
+.prochain p{color:#c9d6e2}
+.tarifs{list-style:none;margin:0;padding:0;width:100%;font-variant-numeric:tabular-nums}
+.tarifs li{display:flex;justify-content:space-between;gap:16px;padding-block:9px;border-bottom:1px solid rgba(244,242,238,.22)}
+.tarifs b{color:var(--fond)}
+.tarifs span{color:#c9d6e2}
+.reglement{font-size:.88rem}
+.prochain .droite{display:grid;gap:14px;justify-items:start}
+
+.apropos .in{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:center}
+.apropos .texte{display:grid;gap:14px}
+.apropos p{color:var(--texte-doux);max-width:36em}
+
+.lieu .in{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.lieu dl,.lieu-dl{margin:0;display:grid;gap:12px}
+.lieu dt,.lieu-dl dt{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bleu);font-weight:700}
+.lieu dd,.lieu-dl dd{margin:0}
+
+
+footer{background:var(--papier)}
+footer .in{padding-block:32px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;font-size:.88rem;color:var(--texte-doux)}
+@media (max-width:560px){nav{gap:14px;font-size:.86rem}}
+
+/* pages intérieures */
+.entete .in{padding-block:36px 8px;display:grid;gap:10px}
+.entete p.lead{color:var(--texte-doux);font-size:1.08rem;max-width:36em}
+.prose{display:grid;gap:14px;max-width:40em}
+.prose p{color:var(--texte-doux)}
+.deux .in{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start}
+.faq{display:grid;gap:0}
+.faq div{border-top:1px solid var(--trait);padding-block:16px;display:grid;gap:6px}
+.faq h3{font-size:1.3rem}
+.faq p{color:var(--texte-doux)}
+.bloc{background:var(--papier);border-radius:18px;padding:24px;display:grid;gap:14px;align-content:start}
+.bloc .tarifs li{border-bottom:1px solid var(--trait)}
+.bloc .tarifs b{color:var(--marine)}
+.bloc .tarifs span{color:var(--texte-doux)}
+.bloc p{color:var(--texte-doux)}
+nav a[aria-current="page"]{color:var(--bleu);font-weight:700}
+
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%;height:auto}
+.saut{position:absolute;left:-999px}
+.saut:focus{left:12px;top:12px;background:var(--papier);padding:8px 12px;border-radius:8px;z-index:10}
+.vide .in{padding-block:8px 96px}
+.vide p{color:var(--texte-doux)}
+.plan{border:0;width:100%;aspect-ratio:4/3;border-radius:18px;display:block;background:var(--bleu-doux)}
+.etapes{margin:0;padding-left:1.2em;display:grid;gap:8px;color:var(--texte-doux)}
+footer a{color:inherit}
+.lien{color:var(--bleu);font-weight:700}

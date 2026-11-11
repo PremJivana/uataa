@@ -1,0 +1,98 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+import salle from '../assets/salle.jpg';
+---
+
+<Base
+  titre="Le Kundalini Yoga : la pratique et le déroulé d'un cours | Uataa"
+  description="Qu'est-ce que le Kundalini Yoga ? Kriyas, respirations, mantras et méditation : découvrez le déroulé d'un cours à Papeete, ouvert aux débutants."
+>
+  <div class="entete band">
+    <div class="in">
+      <p class="sur">La pratique</p>
+      <h1>Le Kundalini Yoga</h1>
+      <p class="lead">Un yoga complet, qui associe le mouvement, le souffle, le son et la méditation.</p>
+    </div>
+  </div>
+
+  <section class="deux band">
+    <div class="in">
+      <div class="prose">
+        <h2>Une pratique en séries</h2>
+        <p>
+          Le Kundalini Yoga se pratique par kriyas&nbsp;: des enchaînements précis de postures, de respirations et de
+          sons, chacun construit autour d'une intention, comme relâcher les tensions, tonifier le dos ou apaiser le
+          mental.
+        </p>
+        <p>
+          Les postures sont souvent dynamiques et répétées, portées par la respiration. Les mantras, chantés ou écoutés,
+          donnent le rythme et aident à poser l'attention. Chaque cours se termine par une relaxation et une méditation.
+        </p>
+        <p>
+          On ne cherche ni la performance ni la posture parfaite. Chacun adapte l'intensité à son corps et à son énergie
+          du jour.
+        </p>
+      </div>
+      <div class="photo" style="border-radius:18px">
+        <Image
+          src={salle}
+          alt="Élèves en posture dans la salle de pratique"
+          widths={[480, 800, 1200]}
+          sizes="(min-width: 700px) 470px, 100vw"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="in">
+      <div><p class="sur">Un cours, pas à pas</p><h2>75 minutes pour soi</h2></div>
+      <ul class="temps">
+        <li>
+          <b>Se poser</b><span
+            >Un échauffement en douceur pour délier le corps, laisser la journée derrière soi et revenir à soi.</span
+          >
+        </li>
+        <li>
+          <b>S'accorder</b><span
+            >Le mantra d'ouverture, <i>Ong Namo Guru Dev Namo</i>, qui marque le début de la pratique.</span
+          >
+        </li>
+        <li><b>Pratiquer</b><span>Le kriya de la semaine, guidé pas à pas, à son rythme.</span></li>
+        <li><b>Se relâcher</b><span>Une relaxation allongée, pour laisser le corps intégrer la pratique.</span></li>
+        <li>
+          <b>Méditer</b><span
+            >Une méditation, souvent avec un mudra ou un mantra, puis la clôture sur <i>Sat Nam</i>.</span
+          >
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="in">
+      <div><p class="sur">Questions fréquentes</p><h2>Avant de venir</h2></div>
+      <div class="faq">
+        <div>
+          <h3>Faut-il être souple ou avoir déjà pratiqué&nbsp;?</h3>
+          <p>Non. Le cours est ouvert aux débutants, et chaque posture peut être adaptée.</p>
+        </div>
+        <div>
+          <h3>Que faut-il apporter&nbsp;?</h3>
+          <p>
+            Une tenue confortable et une bouteille d'eau. Les tapis et les coussins sont fournis, et la salle est
+            climatisée.
+          </p>
+        </div>
+        <div>
+          <h3>Comment essayer&nbsp;?</h3>
+          <p>La première séance est offerte. Il suffit de réserver sa place par WhatsApp.</p>
+        </div>
+      </div>
+      <div><a class="btn" href={site.reserver} target="_blank" rel="noopener">Réserver ma séance offerte</a></div>
+    </div>
+  </section>
+</Base>

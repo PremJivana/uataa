@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import Tarifs from '../components/Tarifs.astro';
+import { site } from '../data/site';
+---
+
+<Base
+  titre="Planning et tarifs des cours de Kundalini Yoga à Papeete | Uataa"
+  description="Cours de Kundalini Yoga tous les lundis de 17h30 à 18h45 au centre AMA, Papeete. Première séance offerte, carte de 10 cours ou trimestre."
+>
+  <div class="entete band">
+    <div class="in">
+      <p class="sur">Planning et tarifs</p>
+      <h1>Tous les lundis, de 17h30 à 18h45</h1>
+      <p class="lead">Au centre AMA, {site.lieu.rue}, à {site.lieu.ville}.</p>
+    </div>
+  </div>
+
+  <section class="deux band">
+    <div class="in">
+      <div class="bloc">
+        <h2>Tarifs</h2>
+        <Tarifs />
+        <p>Le règlement se fait auprès de l'association Diwali Yoga.</p>
+      </div>
+      <div class="bloc">
+        <h2>Réserver</h2>
+        <p>Pour retenir votre place, envoyez-moi un message WhatsApp en indiquant le lundi qui vous convient.</p>
+        <ol class="etapes">
+          <li>Vous m'écrivez sur WhatsApp.</li>
+          <li>Je vous confirme votre place.</li>
+          <li>Vous venez avec une tenue confortable, le reste est sur place.</li>
+        </ol>
+        <div><a class="btn" href={site.reserver} target="_blank" rel="noopener">Réserver ma séance offerte</a></div>
+      </div>
+    </div>
+  </section>
+</Base>
