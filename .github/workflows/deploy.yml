@@ -28,8 +28,8 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          SITE_URL: ${{ steps.pages.outputs.origin }}
-          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          SITE_URL: https://uataa.net
+          BASE_PATH: ''
           # Passer à 'true' pour ouvrir le site aux moteurs de recherche.
           PUBLIC_INDEXABLE: ${{ vars.PUBLIC_INDEXABLE || 'false' }}
       - uses: actions/upload-pages-artifact@v3
