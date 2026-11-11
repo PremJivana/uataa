@@ -7,6 +7,7 @@ Site vitrine des cours de Kundalini Yoga d'Aurélie, au centre AMA à Papeete.
 | Pour changer… | Fichier |
 | --- | --- |
 | L'horaire, les tarifs, l'adresse, les liens WhatsApp et Facebook | `src/data/site.ts` |
+| Le thème du prochain cours (accueil) | `src/data/prochain-cours.ts` |
 | Les textes de l'accueil | `src/pages/index.astro` |
 | La page Kundalini Yoga | `src/pages/kundalini-yoga.astro` |
 | La page Planning et tarifs | `src/pages/planning-tarifs.astro` |

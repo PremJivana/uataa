@@ -3,11 +3,19 @@ import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Tarifs from '../components/Tarifs.astro';
 import { site, lien } from '../data/site';
+import { prochainCours as pc } from '../data/prochain-cours';
 import logo from '../assets/logo.png';
 import jardin from '../assets/jardin.jpg';
 import cours from '../assets/cours.jpg';
 import meditation from '../assets/meditation.jpg';
 import salle from '../assets/salle.jpg';
+
+// Fin du cours, heure de Tahiti (UTC-10)
+const finCours = pc.date ? new Date(`${pc.date}T18:45:00-10:00`) : null;
+const afficherTheme = Boolean(pc.theme && finCours && !isNaN(finCours.getTime()) && finCours > new Date());
+const jourCours = finCours
+  ? new Intl.DateTimeFormat('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'Pacific/Tahiti' }).format(finCours)
+  : '';
 ---
 
 <Base
@@ -68,6 +76,14 @@ import salle from '../assets/salle.jpg';
         <p class="sur">Prochain cours</p>
         <h2>Cours de yoga à Papeete, chaque lundi</h2>
         <p>De 17h30 à 18h45, au centre AMA, Papeete.</p>
+        {afficherTheme && (
+          <div class="theme" data-fin={finCours!.toISOString()}>
+            <p class="theme-date">{jourCours.charAt(0).toUpperCase() + jourCours.slice(1)}{pc.surtitre && ` · ${pc.surtitre}`}</p>
+            <h3>{pc.theme}</h3>
+            {pc.accroche && <p class="theme-accroche">{pc.accroche}</p>}
+            {pc.texte && <p>{pc.texte}</p>}
+          </div>
+        )}
       </div>
       <div class="droite">
         <Tarifs />
@@ -143,4 +159,9 @@ import salle from '../assets/salle.jpg';
       </dl>
     </div>
   </section>
+  <script is:inline>
+    document.querySelectorAll('.theme[data-fin]').forEach(function (t) {
+      if (new Date(t.dataset.fin) < new Date()) t.remove();
+    });
+  </script>
 </Base>
