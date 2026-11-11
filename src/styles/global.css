@@ -64,6 +64,8 @@ section .in{padding-block:52px;display:grid;gap:28px}
 .tarifs span{color:#c9d6e2}
 .reglement{font-size:.88rem}
 .theme{margin-top:14px;padding:20px 22px;border-radius:18px;background:rgba(255,255,255,.07);border-left:3px solid var(--soleil);display:grid;gap:6px}
+.theme-image{width:100%;height:auto;border-radius:12px;display:block;margin-bottom:8px}
+.cache-visuel{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .theme h3{font-size:2rem;color:var(--fond)}
 .prochain .theme-date{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--soleil-clair)}
 .prochain .theme-accroche{font-family:var(--titre);font-style:italic;font-size:1.3rem;line-height:1.3;color:var(--fond)}

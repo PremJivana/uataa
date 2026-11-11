@@ -9,6 +9,9 @@ import cours from '../assets/cours.jpg';
 import meditation from '../assets/meditation.jpg';
 import salle from '../assets/salle.jpg';
 
+const imagesThemes = import.meta.glob<{ default: ImageMetadata }>('../assets/themes/*.{png,jpg,jpeg,webp}', { eager: true });
+const imageTheme = pc.image ? imagesThemes[`../assets/themes/${pc.image}`]?.default : undefined;
+
 // Fin du cours, heure de Tahiti (UTC-10)
 const finCours = pc.date ? new Date(`${pc.date}T18:45:00-10:00`) : null;
 const afficherTheme = Boolean(pc.theme && finCours && !isNaN(finCours.getTime()) && finCours > new Date());
@@ -68,9 +71,18 @@ const jourCours = finCours
         <p>De 17h30 à 18h45, au centre AMA, Papeete.</p>
         {afficherTheme && (
           <div class="theme" data-fin={finCours!.toISOString()}>
+            {imageTheme && (
+              <Image
+                class="theme-image"
+                src={imageTheme}
+                alt={`${pc.theme}${pc.accroche ? ' : ' + pc.accroche : ''}`}
+                widths={[480, 800, 1080]}
+                sizes="(min-width: 700px) 440px, 100vw"
+              />
+            )}
             <p class="theme-date">{jourCours.charAt(0).toUpperCase() + jourCours.slice(1)}{pc.surtitre && ` · ${pc.surtitre}`}</p>
-            <h3>{pc.theme}</h3>
-            {pc.accroche && <p class="theme-accroche">{pc.accroche}</p>}
+            <h3 class:list={[{ 'cache-visuel': imageTheme }]}>{pc.theme}</h3>
+            {pc.accroche && !imageTheme && <p class="theme-accroche">{pc.accroche}</p>}
             {pc.texte && <p>{pc.texte}</p>}
           </div>
         )}
