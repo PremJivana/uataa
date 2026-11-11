@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import Tarifs from '../components/Tarifs.astro';
 import { site, lien } from '../data/site';
 import logo from '../assets/logo.png';
+import jardin from '../assets/jardin.jpg';
 import cours from '../assets/cours.jpg';
 import meditation from '../assets/meditation.jpg';
 import salle from '../assets/salle.jpg';
@@ -21,6 +22,15 @@ import salle from '../assets/salle.jpg';
       <div class="actions">
         <a class="btn" href={site.reserver} target="_blank" rel="noopener">Réserver ma séance offerte</a>
         <a class="btn clair" href={lien('planning-tarifs/')}>Voir l'horaire et les tarifs</a>
+      </div>
+      <div class="ouverture">
+        <Image
+          src={jardin}
+          alt="Relaxation de Kundalini Yoga en plein air à Tahiti, sous les arbres, guidée par Aurélie"
+          widths={[480, 800, 1200, 1520]}
+          sizes="(min-width: 800px) 760px, 100vw"
+          loading="eager"
+        />
       </div>
     </div>
   </div>
