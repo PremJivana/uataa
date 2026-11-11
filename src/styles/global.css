@@ -90,6 +90,7 @@ footer .in{padding-block:32px;display:flex;flex-wrap:wrap;gap:16px;justify-conte
 .entete p.lead{color:var(--texte-doux);font-size:1.08rem;max-width:36em}
 .prose{display:grid;gap:14px;max-width:40em}
 .prose p{color:var(--texte-doux)}
+.prose p.sur{color:var(--bleu)}
 .deux .in{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start}
 .faq{display:grid;gap:0}
 .faq div{border-top:1px solid var(--trait);padding-block:16px;display:grid;gap:6px}
