@@ -22,13 +22,15 @@ const donnees = {
   '@context': 'https://schema.org',
   '@type': 'SportsActivityLocation',
   name: `${site.nom} - ${site.baseline}`,
-  description: 'Cours de Kundalini Yoga à Papeete, au centre AMA.',
+  description: 'Cours de Kundalini Yoga à Papeete, Tahiti, au centre AMA.',
+  areaServed: ['Papeete', 'Tahiti', 'Polynésie française'],
   url: Astro.site?.href,
   image: partage,
   address: {
     '@type': 'PostalAddress',
     streetAddress: site.lieu.rue,
     addressLocality: site.lieu.ville,
+    addressRegion: 'Tahiti',
     addressCountry: site.lieu.pays,
   },
   openingHoursSpecification: [

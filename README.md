@@ -29,9 +29,9 @@ npm run build    # construit le site dans dist/
 Chaque modification de la branche `main` republie le site via GitHub Pages
 (`.github/workflows/deploy.yml`).
 
-Le site reste caché des moteurs de recherche tant que la variable
-`PUBLIC_INDEXABLE` ne vaut pas `true` au moment de la construction. À activer
-quand le nom de domaine définitif est en place.
+Le site reste caché des moteurs de recherche tant que la variable de dépôt
+`PUBLIC_INDEXABLE` ne vaut pas `true` (Settings > Secrets and variables >
+Actions > Variables). Elle règle à la fois la balise `robots` et `robots.txt`.
 
 ## À venir
 
