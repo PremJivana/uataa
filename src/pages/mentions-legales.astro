@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+
+<Base
+  titre="Mentions légales | Uataa"
+  description="Mentions légales du site Uataa - Yoga & Arts du Soin : éditrice, hébergeur et données personnelles."
+>
+  <div class="entete band">
+    <div class="in">
+      <p class="sur">Informations</p>
+      <h1>Mentions légales</h1>
+    </div>
+  </div>
+
+  <section class="band">
+    <div class="in">
+      <div class="prose">
+        <h2>Éditrice du site</h2>
+        <p>
+          Aurélie Trentesse, pour {site.nom} - {site.baseline}.<br />
+          {site.lieu.nom}, {site.lieu.rue}, {site.lieu.ville}, Polynésie française.<br />
+          Contact&nbsp;: <a class="lien" href={site.whatsapp} target="_blank" rel="noopener">par WhatsApp</a>.
+        </p>
+
+        <h2>Hébergeur</h2>
+        <p>
+          GitHub Pages, service de GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.
+        </p>
+
+        <h2>Données personnelles</h2>
+        <p>
+          Ce site ne contient ni formulaire, ni compte utilisateur, ni outil de mesure d'audience, et ne dépose aucun
+          cookie publicitaire. Aucune donnée personnelle n'y est collectée par l'éditrice.
+        </p>
+        <p>
+          Les polices d'écriture et la carte de la page Contact sont fournies par Google. Leur affichage entraîne une
+          connexion de votre navigateur aux serveurs de Google, qui reçoivent alors votre adresse IP. Les liens
+          WhatsApp et Facebook ouvrent ces services, soumis à leurs propres règles de confidentialité.
+        </p>
+
+        <h2>Contenus et photographies</h2>
+        <p>
+          Les textes, le logo et les photographies de ce site sont la propriété de leur autrice et ne peuvent être
+          réutilisés sans son accord. Les personnes photographiées peuvent demander le retrait d'une image en écrivant
+          à l'éditrice.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

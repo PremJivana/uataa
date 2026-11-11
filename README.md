@@ -12,6 +12,7 @@ Site vitrine des cours de Kundalini Yoga d'Aurélie, au centre AMA à Papeete.
 | La page Planning et tarifs | `src/pages/planning-tarifs.astro` |
 | La page Blog | `src/pages/blog.astro` |
 | La page Contact | `src/pages/contact.astro` |
+| Les mentions légales | `src/pages/mentions-legales.astro` |
 | Les couleurs et la mise en forme | `src/styles/global.css` |
 | Les photos | `src/assets/` |
 
@@ -36,6 +37,5 @@ quand le nom de domaine définitif est en place.
 
 - Réservation en ligne (Cal.com) à la place du message WhatsApp
 - Nom de domaine définitif
-- Mentions légales
 - Soin Taurumi
 - Espace élèves (kriyas de la semaine, visibles 7 jours)
