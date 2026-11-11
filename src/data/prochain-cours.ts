@@ -9,5 +9,5 @@ export const prochainCours = {
   theme: 'Manipura',
   accroche: 'Raviver son feu intérieur et son énergie vitale',
   texte:
-    "Un peu à plat en ce moment ? Lundi, on rallume le feu intérieur avec une kriya pour Manipura, le chakra du nombril, siège de l'énergie vitale. Mouvements, souffle et méditation pour retrouver de l'élan et de la confiance.",
+    "Un peu à plat en ce moment ? Lundi, on rallume le feu intérieur avec un kriya pour Manipura, le chakra du nombril, siège de l'énergie vitale. Mouvements, souffle et méditation pour retrouver de l'élan et de la confiance.",
 };
