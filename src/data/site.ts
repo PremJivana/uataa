@@ -15,7 +15,7 @@ export const site = {
   tarifs: [
     { nom: 'Première séance', prix: 'Offerte', xpf: 0 },
     { nom: 'Carte de 10 cours', prix: '17 185 XPF', xpf: 17185, parCours: 'soit environ 1 720 XPF le cours' },
-    { nom: 'Trimestre', prix: '16 700 XPF', xpf: 16700, parCours: '' },
+    { nom: 'Trimestre', prix: '16 700 XPF', xpf: 16700, parCours: 'soit 1 390 à 1 520 XPF le cours (11 à 12 cours)' },
   ],
   whatsapp: 'https://wa.me/68987282805',
   telephone: '87 28 28 05',
