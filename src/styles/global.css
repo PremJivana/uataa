@@ -123,4 +123,5 @@ footer a{color:inherit}
 
 .cal-cadre{width:100%;min-height:560px;overflow:auto;border-radius:18px;background:var(--papier)}
 .cal-secours{font-size:.9rem;color:var(--texte-doux)}
-.par-cours{display:block;font-weight:400;font-size:.8rem;color:var(--texte-doux);text-align:right}
+.tarifs b{text-align:right;white-space:nowrap}
+.par-cours{display:block;font-weight:400;font-size:.8rem;color:var(--texte-doux);white-space:normal}
