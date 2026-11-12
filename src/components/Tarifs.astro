@@ -1,9 +1,14 @@
 ---
 import { site } from '../data/site';
+interface Props { detail?: boolean }
+const { detail = false } = Astro.props;
 ---
 
 <ul class="tarifs">
   {site.tarifs.map((t) => (
-    <li><span>{t.nom}</span><b>{t.prix}</b></li>
+    <li>
+      <span>{t.nom}</span>
+      <b>{t.prix}{detail && t.parCours && <small class="par-cours">{t.parCours}</small>}</b>
+    </li>
   ))}
 </ul>

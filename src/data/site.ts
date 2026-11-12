@@ -14,8 +14,8 @@ export const site = {
   cours: { jour: 'lundi', debut: '17:30', fin: '18:45', libelle: 'Tous les lundis, de 17h30 à 18h45' },
   tarifs: [
     { nom: 'Première séance', prix: 'Offerte', xpf: 0 },
-    { nom: 'Carte de 10 cours', prix: '17 185 XPF', xpf: 17185 },
-    { nom: 'Trimestre', prix: '16 700 XPF', xpf: 16700 },
+    { nom: 'Carte de 10 cours', prix: '17 185 XPF', xpf: 17185, parCours: 'soit environ 1 720 XPF le cours' },
+    { nom: 'Trimestre', prix: '16 700 XPF', xpf: 16700, parCours: '' },
   ],
   whatsapp: 'https://wa.me/68987282805',
   telephone: '87 28 28 05',
