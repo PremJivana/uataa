@@ -6,11 +6,11 @@
 // et écris son nom ci-dessous. Sans image, mets image: ''.
 
 export const prochainCours = {
-  date: '2026-11-16',
-  image: 'manipura.png',
-  surtitre: '3e chakra',
-  theme: 'Manipura',
-  accroche: 'Raviver son feu intérieur et son énergie vitale',
+  date: '2026-11-23',
+  image: 'triangle-inferieur.png',
+  surtitre: 'Chakras 1, 2 et 3',
+  theme: 'Triangle inférieur',
+  accroche: "Libérer et purifier l'énergie de vie",
   texte:
-    "Un peu à plat en ce moment ? Lundi, on rallume le feu intérieur avec un kriya pour Manipura, le chakra du nombril, siège de l'énergie vitale. Mouvements, souffle et méditation pour retrouver de l'élan et de la confiance.",
+    "Lundi, on travaille le triangle inférieur : les trois premiers chakras, racine, sacré et nombril. Un kriya pour libérer les tensions, purifier et faire circuler l'énergie de vie, et retrouver ancrage, fluidité et vitalité.",
 };
